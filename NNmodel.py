@@ -15,3 +15,16 @@ def create_model(optimizer='rmsprop', neuron_in_first=32, neuron_in_second=64, d
                optimizer=optimizer,
                metrics=['accuracy'])
     return nn
+
+
+def best_model():
+    nn = Sequential()
+    nn.add(Dense(32, input_dim=14, activation='relu'))
+    nn.add(Dense(64, activation='relu'))
+
+    nn.add(Dense(1, activation='sigmoid'))
+
+    nn.compile(loss=keras.losses.binary_crossentropy,
+               optimizer='rmsprop',
+               metrics=['accuracy'])
+    return nn
