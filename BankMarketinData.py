@@ -49,6 +49,3 @@ def describe_data(df):
         print("Describe for \"{}\" is: {}".format(i, df[i].describe()))
 
 
-data = load_data('bank-full.csv')
-data = preprocess_data(data)
-describe_data(data)
